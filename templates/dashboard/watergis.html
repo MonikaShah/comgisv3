@@ -243,7 +243,7 @@
                 <label><input type="checkbox" value="{pawana_basin}" onchange="getBoundary(this)"><span> Pawana Basin </span></label>
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" value="{indrayani_basin}" onchange="getBoundary(this)" disabled><span> Indrayani Basin</span></label>
+                <label><input type="checkbox" value="{indrayani_basin}" onchange="getBoundary(this)"><span> Indrayani Basin</span></label>
             </div>
             <div class="checkbox">
                 <label><input type="checkbox" value="{agrani_basin}" onchange="getBoundary(this)"disabled><span> Agrani Basin</span></label>
@@ -292,6 +292,21 @@
                 
                 </ul>
             </div>
+
+            <hr>
+
+            <h6>Villages</h6>
+            <ul><li><b>Pune </b></li>
+            <div class="checkbox">
+                <label><input type="checkbox" value="{pawana_village}" onchange="getBoundary(this)"><span> Pawana Village </span></label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="{indrayani_village}" onchange="getBoundary(this)"><span> Indrayani Village </span></label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="{agrani_village}" onchange="getBoundary(this)"disabled><span> Agrani Village </span></label>
+            </div>
+        </ul>
     
              <hr>
                 <h6>Ground Water Recharge Priority </h6>
@@ -1149,6 +1164,10 @@
                                             putWMS1("Pawana_Basin_Layer0" );
                                             console.log("Boundary is "+boundary)
                                         }   
+                                        else if (boundary == "{indrayani_basin}"){// Rivers Basin 
+                                            putWMS1("Indrayani_Basin" );
+                                            console.log("Boundary is "+boundary)
+                                        }   
                                         else if (boundary == "{poisar}"){
                                             putWMS1("poisar_River_Nov22");
                                             console.log("Boundary is "+boundary)
@@ -1166,13 +1185,21 @@
                                             console.log("Boundary is "+boundary)
                                         }
                                         else if (boundary == "{indrayani}"){
-                                            putWMS1("Indrayani_River_Merged_line" );
+                                            putWMS1("Indrayani_river_line_layer" );
                                             console.log("Boundary is "+boundary)
                                         }
                                         else if (boundary == "{mithi}"){
                                             putWMS1("Mithi_River_Nov22");
                                             console.log("Boundary is "+boundary)
                                         }
+                                        else if (boundary == "{pawana_village}"){// Rivers Basin 
+                                            putWMS1("pawana_villages_poly_layers" );
+                                            console.log("Boundary is "+boundary)
+                                        }  
+                                        else if (boundary == "{indrayani_village}"){// Rivers Basin 
+                                            putWMS1("Indrayani_poly_village" );
+                                            console.log("Boundary is "+boundary)
+                                        }   
                                         else if(boundary =="{ashele}")
                                         {
                                             putWMS1("Ashele_GW")
@@ -1224,12 +1251,14 @@
                                             removewards();
                                         else if (boundary == "{pawana_basin}")
                                             removeWMS("Pawana_Basin_Layer0" );  
+                                        else if (boundary == "{indrayani_basin}")
+                                            removeWMS("Indrayani_Basin" );  
                                         else if (boundary == "{poisar}")
                                             removeWMS("poisar_River_Nov22");
                                         else if (boundary == "{pawana}")
                                             removeWMS("River_line_layers");
                                         else if (boundary == "{indrayani}")
-                                            removeWMS("Indrayani_River_Merged_line");        
+                                            removeWMS("Indrayani_river_line_layer");        
                                         else if (boundary == "{dahisar}"){
                                             removeWMS("Dahisar_River_Nov22");
                                             console.log("Boundary is "+boundary)
@@ -1240,6 +1269,10 @@
                                             removeWMS("Oshiwara_River_Nov22");
                                             console.log("Boundary is "+boundary)
                                         }
+                                        else if (boundary == "{pawana_village}")
+                                            removeWMS("pawana_villages_poly_layers" ); 
+                                        else if (boundary == "{indrayani_village}")
+                                            removeWMS("Indrayani_poly_village" ); 
                                         else if (boundary == "{mini_ws}")
                                             removeWMS("mini_15_district0")
                                         else if (boundary == "{mah_river}"){
@@ -3452,6 +3485,8 @@ function setView1(layerName, selectedBoundary) {
             console.log(wms_layer1);
             if(layer == 'Pawana_Basin_Layer0' )
                 mymap.setView([18.637,73.605],11);
+            if(layer == 'Indrayani_Basin' )
+                mymap.setView([18.688,73.598],11);
             else if(layer == 'poisar_River_Nov22')
                 mymap.setView([19.210712,72.835955],14);
             else if(layer == 'Dahisar_River_Nov22')
@@ -3460,14 +3495,18 @@ function setView1(layerName, selectedBoundary) {
                 mymap.setView([19.161106,72.858474],13);
             else if(layer == 'River_line_layers' )
                 mymap.setView([18.663,73.59],12);
-            else if(layer == 'Indrayani_River_Merged_line')
-                mymap.setView([18.672,73.609],11);
+            else if(layer == 'Indrayani_river_line_layer')
+                mymap.setView([18.741,73.587],11);
             else if(layer == 'Mithi_River_Nov22')
                 mymap.setView([19.09546,72.87995],14);
             else if(layer == 'maharashtra_rivers_from_osm')
                 mymap.setView([19.6322,76.032],7);
             else if(layer == 'mini_15_district0')
                 mymap.setView([19.6322,76.032],7);
+            if(layer == 'pawana_villages_poly_layers' )
+                mymap.setView([18.633,73.604],12);
+            if(layer == 'Indrayani_poly_village' )
+                mymap.setView([18.688,73.598],11);
             else if(layer == 'Ashele_GW'){
                 mymap.setView([19.2107,73.1523],15);
                 addWMSLegend1(layer);
