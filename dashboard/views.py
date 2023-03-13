@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import User, Awc, AwcSpecific, Aww, HouseHolds,UploadWellPictureModel
+from .models import User, Awc, AwcSpecific, Aww, HouseHolds#,UploadWellPictureModel
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
@@ -9,7 +9,7 @@ import time
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
 from django.contrib.gis.geos import Point
-from .forms import UploadWellPictureForm
+# from .forms import UploadWellPictureForm
 
 # from django.db import connection
 # from dashboard.models import IndiaFinal1617BasicLatlong
