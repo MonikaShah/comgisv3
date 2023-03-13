@@ -3,7 +3,9 @@ from .models import User, Awc, AwcSpecific, Aww, HouseHolds,UploadWellPictureMod
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-import re,base64,time
+import re
+import base64
+import time
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
 from django.contrib.gis.geos import Point
@@ -225,7 +227,8 @@ def capt_wells(request):
     # if request.method == 'POST' and not request.is_ajax():
     if request.method == 'POST' and not request.META.get('HTTP_X_REQUESTED_WITH'):
         form = UploadWellPictureForm(request.POST, request.FILES)
-        form.save(commit=False)
+        if form.is_valid():
+            form.save()
         name = request.POST.get('name')
         well_nm = request.POST.get('well_nm')
         radius = request.POST.get('radius')
@@ -252,6 +255,9 @@ def capt_wells(request):
     else:
         form = UploadWellPictureForm()
     return render(request,'dashboard/capt_wells.html',{})
+
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
 def uploadwellpic(request):
     if request.method == 'POST':
