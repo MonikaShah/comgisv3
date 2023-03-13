@@ -16,6 +16,11 @@ from django.contrib.gis.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 # from django.contrib.auth.models import User
 from django import forms
+from PIL import Image
+from io import BytesIO
+import sys
+from django.core.files.uploadedfile import InMemoryUploadedFile
+# from django import InMemoryUploadedFile
 from crispy_forms.helper import FormHelper
 
 class UploadWellPictureModel(models.Model):
@@ -46,6 +51,7 @@ class UploadWellPictureModel(models.Model):
         return picture
     class Meta:
        managed = True
+       db_table = 'upload_well'
 # class CustomAccountManager(BaseUserManager):
 #     def create_superuser(self, username, password, **other_fields):
 #         default_ward = MumbaiWardBoundary2Jan2022.objects.get(id=1)

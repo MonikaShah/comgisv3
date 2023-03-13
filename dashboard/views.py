@@ -3,9 +3,7 @@ from .models import User, Awc, AwcSpecific, Aww, HouseHolds,UploadWellPictureMod
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-import re
-import base64
-import time
+import re,base64,time
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
 from django.contrib.gis.geos import Point
@@ -224,10 +222,10 @@ def capt_wells(request):
     if request.headers.get('x-requested-with') == 'XMLHttpRequest': 
         datauri = request.POST['picture']
     
-    if request.method == 'POST' and not request.is_ajax():
+    # if request.method == 'POST' and not request.is_ajax():
+    if request.method == 'POST' and not request.META.get('HTTP_X_REQUESTED_WITH'):
         form = UploadWellPictureForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
+        form.save(commit=False)
         name = request.POST.get('name')
         well_nm = request.POST.get('well_nm')
         radius = request.POST.get('radius')
@@ -255,9 +253,6 @@ def capt_wells(request):
         form = UploadWellPictureForm()
     return render(request,'dashboard/capt_wells.html',{})
 
-def is_ajax(request):
-    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
-
 def uploadwellpic(request):
     if request.method == 'POST':
         form = UploadWellPictureForm(request.POST, request.FILES)
@@ -267,7 +262,7 @@ def uploadwellpic(request):
             instance.save()
             messages.success(request, "Registration successful." )
             print("data is saved.")
-            return redirect('/capt_wells')
+            return redirect('capt_wells')
     else:
         form = UploadWellPictureForm()
     return render(request,'dashboard/uploadWellPic.html',{})
