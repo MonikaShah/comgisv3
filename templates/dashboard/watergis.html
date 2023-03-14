@@ -242,11 +242,9 @@
             <div class="checkbox">
                 <label><input type="checkbox" value="{pawana_basin}" onchange="getBoundary(this)"><span> Pawana Basin </span></label>
             </div>
+            
             <div class="checkbox">
-                <label><input type="checkbox" value="{indrayani_basin}" onchange="" disabled><span> Indrayani Basin </span></label>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" value="{agrani_basin}" onchange="" disabled><span> Agrani Basin </span></label>
+            
                 <label><input type="checkbox" value="{indrayani_basin}" onchange="getBoundary(this)"><span> Indrayani Basin</span></label>
             </div>
             <div class="checkbox">
@@ -284,7 +282,7 @@
                     <label><input type="checkbox" value="{indrayani}" onchange="getBoundary(this)"><span> Indrayani River</span></label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox" value="{agrani}" onchange="getBoundary(this)" disabled><span> Agrani River </span></label>
+                  
                     <label><input type="checkbox" value="{agrani}" onchange="getBoundary(this)" disabled><span> Agrani River</span></label>
                 </div>
                 <li><b>Ambarnath </b></li>
@@ -1303,9 +1301,10 @@
                                             removeWMS("poisar_River_Nov22");
                                         else if (boundary == "{pawana}")
                                             removeWMS("River_line_layers");  
-                                        else if (boundary == "{indrayani}")
-                                            removeWMS("Indrayani_River_Merged_line");   
-                                            removeWMS("River_line_layers");
+                                        // else if (boundary == "{indrayani}"){
+                                        //     removeWMS("Indrayani_River_Merged_line");   
+                                        //     removeWMS("River_line_layers");
+                                        // }
                                         else if (boundary == "{indrayani}")
                                             removeWMS("Indrayani_river_line_layer");        
                                         else if (boundary == "{dahisar}"){
