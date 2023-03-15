@@ -16,13 +16,13 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# GDAL PATH
-GDAL_LIBRARY_PATH = r'C:\OSGeo4W\bin\gdal306.dll'
+# # GDAL PATH
+# GDAL_LIBRARY_PATH = r'C:\OSGeo4W\bin\gdal306.dll'
 
-# GEOS PATH
-GEOS_LIBRARY_PATH = r'C:\OSGeo4W\bin\geos_c.dll'
+# # GEOS PATH
+# GEOS_LIBRARY_PATH = r'C:\OSGeo4W\bin\geos_c.dll'
 
-PROJ_LIBRARY_PATH = r'C:\OSGeo4W64\share\proj'
+# PROJ_LIBRARY_PATH = r'C:\OSGeo4W64\share\proj'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -34,7 +34,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1','v3.communitygis.net','communitygis.net']
-ALLOWED_HOSTS = [config('ALLOWED_HOST_1'), config('ALLOWED_HOST_2')]
+ALLOWED_HOSTS = [config('ALLOWED_HOST_1'), config('ALLOWED_HOST_2'), config('ALLOWED_HOST_3')]
 
 
 # Application definition
@@ -140,3 +140,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 print(BASE_DIR)
+DEFAULT_AUTO_FIELD ='django.db.models.AutoField'
