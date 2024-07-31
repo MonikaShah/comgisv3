@@ -137,7 +137,7 @@ tr:hover {
     var lat=19.7515,long= 75.7139;
     mymap.setView([lat,long],7);
     var LAYER,insti_content;
-
+    
     function layerload(maleg) {
     clearAllLayers();
     if(wms_legend){
@@ -166,7 +166,7 @@ tr:hover {
     // }
     if(maleg === 'bifo'){
     
-    mmxlayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+    mmxlayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
     layers: 'geonode:inst_bifocals_4may2020',
     format: 'image/png',
@@ -177,7 +177,7 @@ tr:hover {
     mmxlayer.addTo(mymap);
     addWMSLegend(mmxlayer.options.layers);
 
-    LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmxlayer.options.layers+"&QUERY_LAYERS="+mmxlayer.options.layers;
+    LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmxlayer.options.layers+"&QUERY_LAYERS="+mmxlayer.options.layers;
     LayerList.push(mmxlayer);
 
 
@@ -185,7 +185,7 @@ tr:hover {
     
 else if(maleg === 'iti'){
        
-        mmylayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+        mmylayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
         layers: 'geonode:tot_iti_13apr2020',
         format: 'image/png',
@@ -199,14 +199,14 @@ else if(maleg === 'iti'){
         mmylayer.addTo(mymap);
         addWMSLegend(mmylayer.options.layers);
 
-        LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
+        LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
         LayerList.push(mmylayer);
         }
 
 
         else if(maleg === 'msbvee'){
        
-       mmylayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+       mmylayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
        layers: 'geonode:inst_msbvee_4may2020',
        format: 'image/png',
@@ -220,13 +220,13 @@ else if(maleg === 'iti'){
        mmylayer.addTo(mymap);
        addWMSLegend(mmylayer.options.layers);
 
-       LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
+       LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
        LayerList.push(mmylayer);
        }
 
        else if(maleg === 'pressc'){
        
-       mmylayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+       mmylayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
        layers: 'geonode:inst_pressc_4may2020',
        format: 'image/png',
@@ -240,13 +240,13 @@ else if(maleg === 'iti'){
        mmylayer.addTo(mymap);
        addWMSLegend(mmylayer.options.layers);
 
-       LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
+       LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
        LayerList.push(mmylayer);
        }
 
        else if(maleg === 'tec_schl'){
        
-       mmylayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+       mmylayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
        layers: 'geonode:inst_technical_school_4may2020',
        format: 'image/png',
@@ -260,14 +260,14 @@ else if(maleg === 'iti'){
        mmylayer.addTo(mymap);
        addWMSLegend(mmylayer.options.layers);
 
-       LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
+       LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmylayer.options.layers+"&QUERY_LAYERS="+mmylayer.options.layers;
        LayerList.push(mmylayer);
        }
 
 
         else if(maleg === 'vti'){
         
-        mmvlayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+        mmvlayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
         layers: 'geonode:inst_vti_4may2020',
         format: 'image/png',
@@ -280,14 +280,14 @@ else if(maleg === 'iti'){
         mmvlayer.addTo(mymap);
         // addWMSLegend(mmvlayer.options.layers);
 
-        LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmvlayer.options.layers+"&QUERY_LAYERS="+mmvlayer.options.layers;
+        LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmvlayer.options.layers+"&QUERY_LAYERS="+mmvlayer.options.layers;
 
         LayerList.push(mmvlayer);
         }
         
     //bifocal amenity is being displayed through else part
     else{
-        mmzlayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+        mmzlayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
         layers: 'geonode:inst_other_4may2020',
         format: 'image/png',
@@ -297,7 +297,7 @@ else if(maleg === 'iti'){
     mmzlayer.addTo(mymap);
     // addWMSLegend(mmzlayer.options.layers);
 
-    LAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmzlayer.options.layers+"&QUERY_LAYERS="+mmzlayer.options.layers;
+    LAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS="+mmzlayer.options.layers+"&QUERY_LAYERS="+mmzlayer.options.layers;
 
     LayerList.push(mmzlayer);
 
@@ -407,7 +407,7 @@ mymap.addEventListener('click', Identify);
 
 
 
-const domain = ['https://geoserver2.communitygis.net','http://localhost/'];
+const domain = ['https://geonode.communitygis.in','http://localhost/'];
 
 var rootUrl = domain[0] + 'geoserver/geonode/ows';
 var wms_legend;
@@ -417,7 +417,7 @@ function addVillageLayer(){
     // village_layer = source.getLayer('geonode:maha_rural_plus_urban');
     // village_layer.addTo(mymap);
     // console.log("Hi");
-    villayer = new L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/geonode/ows', {
+    villayer = new L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/ows', {
 
     layers: 'geonode:maha_taluka_13march2021',
     format: 'image/png',
@@ -437,7 +437,7 @@ function clearAllLayers(){
  }
 
 function addWMSLegend(layer){
-    lagendGraphic = "https://geoserver2.communitygis.net/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER="+layer;
+    lagendGraphic = "https://geonode.communitygis.in/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER="+layer;
     wms_legend = L.wmsLegend(lagendGraphic);
 }
 
