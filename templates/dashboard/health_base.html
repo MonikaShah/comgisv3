@@ -191,7 +191,7 @@ body {
 
 var mymap;
 var source = L.wms.source(
-      "https://geoserver2.communitygis.net/geoserver/wms",
+      "https://geonode.communitygis.in/geoserver/wms",
       {
           "format": "image/png",
           "transparent": "true"
@@ -212,7 +212,7 @@ var source = L.wms.source(
   lyrOSM2 = L.tileLayer.provider('OpenStreetMap.Mapnik');
   lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
   mymap.addLayer(lyrOSM);
-  var wms = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+  var wms = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
 				//layer: layer,
         layers: 'geonode:states_in_india',
 				format: 'image/png',

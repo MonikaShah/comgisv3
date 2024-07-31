@@ -1344,7 +1344,7 @@
 
                                     })
 
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
                                     let bbOffset = output.innerHTML / 111;
                                     let options = {
                                         service: 'WFS',
@@ -1429,7 +1429,7 @@
                                         // console.log(query)
 
                                     // let rootUrl = 'https://geonode3.communitygis.net/geoserver/geonode/ows';
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
                                     let bbOffset = output.innerHTML / 111;
                                     let options = {
                                         service: 'WFS',
@@ -1484,7 +1484,7 @@
 
 
                                     let query = 'chc_num>0';
-                                    const url = 'https://geoserver2.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
+                                    const url = 'https://geonode.communitygis.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
 
                                     let bbOffset = output.innerHTML / 111;
 
@@ -1549,7 +1549,7 @@
 
 
                                     let query = 'phc_num>0';
-                                    const url = 'https://geoserver2.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
+                                    const url = 'https://geonode.communitygis.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
 
                                     let bbOffset = output.innerHTML / 111;
 
@@ -1613,7 +1613,7 @@
                                 function querybufAllo(currentPos,typeoFFacility) {
                                     let keys = Object.keys(activatedHealthFacility);
                                     let query = 'h_allo_tot>0';
-                                    const url2 = 'https://geoserver2.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
+                                    const url2 = 'https://geonode.communitygis.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
 
 
                                     let bbOffset = output.innerHTML / 111;
@@ -1675,7 +1675,7 @@
                                 function querybufALt(currentPos,typeoFFacility) {
                                     let keys = Object.keys(activatedHealthFacility);
                                     let query = 'h_alt_tot>0';
-                                    const url2 = 'https://geoserver2.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
+                                    const url2 = 'https://geonode.communitygis.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
 
 
                                     let bbOffset = output.innerHTML / 111;
@@ -1891,7 +1891,7 @@
                                         fillOpacity: 0.7
                                     };
                                 }
-                                const domain = ['https://geoserver2.communitygis.net/', 'http://localhost/'];
+                                const domain = ['https://geonode.communitygis.in/', 'http://localhost/'];
                                 var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
                                 var defaultParameters = {
@@ -2031,7 +2031,7 @@
                                     var distLayerLatLong = listDistrict[aspiD];
                                     //clear_layer();
                                     //console.log('kk',distLayerLatLong);
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: 'geonode:maha_taluka_13march2021',
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2059,7 +2059,7 @@
                                     //console.log(indstate);
                                     var stLayerLatLong = listState[indstate];
 
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: 'geonode:states_in_india',
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2092,7 +2092,7 @@
                                     }
                                     clear_distlayer();
                                     clear_tallayer();
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: layers,
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2118,7 +2118,7 @@
                                     var dist = document.getElementById('district').value;
                                     var taluka = document.getElementById('block_s').value;
 
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: "geonode:maha_taluka_13march2021",
                                         cql_filter: "taluka_nam='" + taluka + "'",
                                         cql_filter: `taluka_nam='${taluka}' AND distname='${dist}'`,
@@ -2145,7 +2145,7 @@
                                     var taluka = document.getElementById('block_s');
                                     var pincode = document.getElementById('pincode').value;
 
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: "geonode:india_pincodes_12june",
                                         cql_filter: "pincode='" + pincode + "'",
                                         cql_filter: `pincode='${pincode}' AND district='${district}'`,
@@ -2169,7 +2169,7 @@
                                 function putwards(cql, layer) {
                                     var dist = cql;
                                     var layer = layer;
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: layer,
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2190,7 +2190,7 @@
 
                                 //this function is for state boundary
                                 function putWMS(layer) {
-                                        var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                        var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: layer,
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2202,7 +2202,7 @@
                                         mymap.removeControl(wms_legend);
                                     }
                                     addWMSLegend(layer);
-                                    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+                                    TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
 
                                 }
 
@@ -2210,7 +2210,7 @@
                                     let stateName = document.getElementById('indstate').value
                                     
                                     if (stateName === "Maharashtra"){
-                                        var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                        var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: layer,
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2224,7 +2224,7 @@
                                         mymap.removeControl(wms_legend);
                                     }
                                     addWMSLegend(layer);
-                                    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+                                    TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
 
                                     }
                                 }
@@ -2232,7 +2232,7 @@
 
 
                                 function addWMSLegend(layer) {
-                                    lagendGraphic = "https://geoserver2.communitygis.net/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" + layer + "&LEGEND_OPTIONS=forceLabels:on";
+                                    lagendGraphic = "https://geonode.communitygis.in/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" + layer + "&LEGEND_OPTIONS=forceLabels:on";
                                     wms_legend = L.wmsLegend(lagendGraphic);
                                 }
 
@@ -2273,7 +2273,7 @@ function styling(layer){
                                     if (area) {
                                         mymap.removeLayer(area);
                                     }
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
 
                                     let options = {
                                         service: 'WFS',
@@ -2320,7 +2320,7 @@ function styling(layer){
                                     if (area) {
                                         mymap.removeLayer(area);
                                     }
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
 
                                     let options = {
                                         service: 'WFS',
@@ -2355,7 +2355,7 @@ function styling(layer){
                                     // if (area) {
                                     //     mymap.removeLayer(area);
                                     // }
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
 
                                     let options = {
                                         service: 'WFS',
@@ -2392,7 +2392,7 @@ function styling(layer){
                                     clear_pinlayer();
                                     var state = document.getElementById('indstate').value;
 
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: "geonode:india_pincodes_12june",
                                         cql_filter: "pincode='" + pincode + "'",
                                         cql_filter: `pincode='${pincode}' AND state='${state}'`,
@@ -2417,7 +2417,7 @@ function setView1(layerName, selectedBoundary) {
     if (area) {
         mymap.removeLayer(area);
     }
-    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
 
     let options = {
         service: 'WFS',
@@ -2451,7 +2451,7 @@ function setView1(layerName, selectedBoundary) {
 
                                 function putWMSru(layer) {
 
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: layer,
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2601,7 +2601,7 @@ function setView1(layerName, selectedBoundary) {
 
                                 function putKoboHealthFacitywms(facility) {
                                     //console.log(cql);
-                                    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+                                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                                         layers: 'geonode:cumulative_health_facility_till_2june',
                                         format: 'image/png',
                                         transparent: 'true',
@@ -2620,7 +2620,7 @@ function setView1(layerName, selectedBoundary) {
                                     }
                                     //console.log(wms_legend); 
                                     addWMSLegend(facility);
-                                    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+                                    TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
                                     wmshealthLayerList.push(wms_layer);
                                     activeKoboAllIndiaHealthFacity[facility] = wms_layer;
                                 }
@@ -2630,7 +2630,8 @@ function setView1(layerName, selectedBoundary) {
                                 function putKoboHealthFacity(facility) {
                                     indstate = document.getElementById('indstate').value;
                                     // let rootUrl = 'https://geonode3.communitygis.net/geoserver/geonode/ows';
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    //let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/wms';    
                                     let options = {
                                         service: 'WFS',
                                         version: '1.0.0',
@@ -2734,7 +2735,7 @@ function setView1(layerName, selectedBoundary) {
 
                                 function putArogya(facility,district) {
                                     // let rootUrl = 'https://geonode3.communitygis.net/geoserver/geonode/ows';
-                                    let rootUrl = 'https://geoserver2.communitygis.net/geoserver/geonode/ows';
+                                    let rootUrl = 'https://geonode.communitygis.in/geoserver/geonode/ows';
                                     //console.log(facility);
                                     var cql = facility;
                                     let options = {
@@ -2882,10 +2883,10 @@ function setView1(layerName, selectedBoundary) {
 
                                     // const url = 'https://geonode3.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
                                     // const url2 = 'https://geonode3.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
-                                    const url = 'https://geoserver2.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
-                                    const url2 = 'https://geoserver2.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
-                                    // const url3 = 'https://geoserver2.communitygis.net/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Astates&maxFeatures=50&outputFormat=application%2Fjson'; 
-                                    // const url4 = 'http://geoserver2.communitygis.net:8080/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Astates&maxFeatures=50&outputFormat=application%2Fjson';
+                                    const url = 'https://geonode.communitygis.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_village_health_centroid_29mar';
+                                    const url2 = 'https://geonode.communitygis.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr';
+                                    // const url3 = 'https://geonode.communitygis.in/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Astates&maxFeatures=50&outputFormat=application%2Fjson'; 
+                                    // const url4 = 'http://geonode.communitygis.in:8080/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Astates&maxFeatures=50&outputFormat=application%2Fjson';
                                     if (facility == 'CHC')
                                         newurl = url + `&cql_filter=chc_num>0 AND district_n='${district}'`;
                                     else if (facility == 'PHC')
