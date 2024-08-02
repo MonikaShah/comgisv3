@@ -73,9 +73,15 @@ def map(request):
 def chandrapurcfrgis(request):
     return render(request, "dashboard/chandrapurgis.html") 
 
+
+
 def chandrapurruralgis(request):
     return render(request, "dashboard/chandrapurruralgis.html") 
     
+def nandurbargis(request):
+    return render(request, "dashboard/nandurbargis.html") 
+
+
 def raigadgis(request):
     return render(request, "dashboard/raigadgis.html")   
 # is_authenticated = false    
@@ -100,6 +106,7 @@ def urban_nutrition(request):
     # lng = cursor.fetchall() 
     # lng = [ i[0] for i in lng]
     data = Awc.objects.all()
+    # un = request.user.get_username()
     # print(data)
     return render(request, "dashboard/urban_nutrition.html",{'title':'URBAN NUTRITION','user':user,'data':data})     
 
@@ -212,7 +219,8 @@ def beneficiary_form(request,id):
     return render(request, 'dashboard/beneficiary_form.html',{'bene':id})
 
 def watergis(request):
-    return render(request,'dashboard/watergis.html')
+    # return render(request,'dashboard/watergis.html')
+    return redirect('https://amrutvahini.communitygis.net/dashboard/watergis2')
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'

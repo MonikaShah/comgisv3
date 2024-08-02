@@ -597,14 +597,15 @@ function putBeat(id){
     var elem = document.getElementById(opt);
     // console.log(wmsLayer)
     if(elem.checked == true){
-        // wmsLayer=L.Geoserver.wms("https://geoserver2.communitygis.net/geoserver/wms", {
+        // wmsLayer=L.Geoserver.wms("https://geonode.communitygis.in/geoserver/wms", {
         //     layers: id,
         // })
         idArray.push(id)
-        // wmsLayer=L.Geoserver.wms("https://geoserver2.communitygis.net/geoserver/wms", {
+        // wmsLayer=L.Geoserver.wms("https://geonode.communitygis.in/geoserver/wms", {
 
         mymap.setView([19.1110, 72.8112], 13);
-        var wmsLayer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/geonode/wms', {
+        
+        var wmsLayer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
           // layers: 'geonode:island_city_revised_2_july',
           layers: 'geonode:beatpolygons',
           format: 'image/png',
@@ -672,6 +673,8 @@ function getLocation() {
           //   iconUrl:"{% static 'images/marker.png' %}"
           // })
         }).addTo(mymap);
+       
+    // <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
         myLoc.bindPopup('my loc').openPopup()
       });
     } else {
@@ -792,7 +795,7 @@ $('#view_s').on('change', function() {
 
 });
 });
-const domain = ['https://geoserver2.communitygis.net/', 'http://localhost/'];
+const domain = ['https://geonode.communitygis.in/', 'http://localhost/'];
   var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
   var defaultParameters = {
@@ -911,7 +914,7 @@ function ViewWards(obj) {
     // removeWards1(layer);
     // alert(layer);
     if(layer == "geonode:mumbai_ward_boundary"){
-      var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+      var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         // layers: 'geonode:island_city_revised_2_july',
         layers: layer,
         format: 'image/png',
@@ -931,7 +934,7 @@ function ViewWards(obj) {
     }else{
 
 
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         // layers: 'geonode:island_city_revised_2_july',
         layers: layer,
         format: 'image/png',
@@ -1219,7 +1222,7 @@ function putWards(opt) {
     // var district = document.getElementById("district").value;
     console.log("putward",opt);
 
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         // layers: 'geonode:island_city_revised_2_july',
         layers: 'geonode:mumbai_ward_boundary',
         format: 'image/png',
@@ -1240,7 +1243,7 @@ function putWards(opt) {
 
     //console.log(wms_legend);
     // addWMSLegend(layer);
-    // TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&cql_filter=" + wms_layer.options.cql_filter;
+    // TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&cql_filter=" + wms_layer.options.cql_filter;
     // console.log(TRIBLAYER);
 
 }
@@ -1251,7 +1254,7 @@ function putLayer(opt) {
     // var district = document.getElementById("district").value;
     console.log("putlayer",opt);
     mymap.setView([19.0110, 72.8512], 12);
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         // layers: 'geonode:island_city_revised_2_july',
         layers: 'geonode:maha_taluka_13march2021',
         format: 'image/png',
@@ -1304,7 +1307,7 @@ function putWards122(opt) {
     }
 
 
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: layer,
         format: 'image/png',
         transparent: 'true',
@@ -1320,7 +1323,7 @@ function putWards122(opt) {
       mymap.removeControl(wms_legend);
     }
     addWMSLegend(layer);
-    //TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    //TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     //console.log(TRIBLAYER);
     mymap.addEventListener('click', Identify);
 }
@@ -1388,7 +1391,7 @@ function putGSWard(opt) {
       zoom_level = 16
     }
 
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: layer,
         format: 'image/png',
         transparent: 'true',
@@ -1407,7 +1410,7 @@ function putGSWard(opt) {
     }
     // ------------------------------------------------------
     addWMSLegend(layer);
-    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/worli-koliwada/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    TRIBLAYER = "https://geonode.communitygis.in/geoserver/worli-koliwada/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     console.log(TRIBLAYER);
 }
 
@@ -1436,7 +1439,7 @@ function putLWard(opt) {
       zoom_level = 14
     }
 
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: layer,
         format: 'image/png',
         transparent: 'true',
@@ -1454,7 +1457,7 @@ function putLWard(opt) {
 
 
     addWMSLegend(layer);
-    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     console.log(TRIBLAYER);
 }
 
@@ -1499,7 +1502,7 @@ function putWard61(opt) {
       zoom_level = 16
     }
 
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: layer,
         format: 'image/png',
         transparent: 'true',
@@ -1515,7 +1518,7 @@ function putWard61(opt) {
       mymap.removeControl(wms_legend);
     }
     addWMSLegend(layer);
-    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/ward61/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    TRIBLAYER = "https://geonode.communitygis.in/geoserver/ward61/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     console.log(TRIBLAYER);
 }
 
@@ -1805,7 +1808,7 @@ function putFacility(opt) {
   for(var i=0; i<ward.length; i++) {
     if(text1.includes(ward[i])) {
       console.log(ward[i]);
-      var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+      var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
                           layers: 'geonode:island_city_revised_2_july',
                           format: 'image/png',
 
@@ -1829,7 +1832,7 @@ function putFacility(opt) {
   }
 
 });
-  var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+  var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
           layers: 'geonode:island_city_revised_2_july',
           format: 'image/png',
 
@@ -1849,7 +1852,7 @@ function putFacility1(opt) {
     // var district = document.getElementById("district").value;
     console.log(opt);
     console.log(ward);
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: 'geonode:osm_building_islandcity_14june',
         format: 'image/png',
 
@@ -1867,7 +1870,7 @@ function putFacility1(opt) {
     console.log(wms_layer);
     //console.log(wms_legend);
     // addWMSLegend(layer);
-    // TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    // TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     // // console.log(TRIBLAYER);
 
 }
@@ -1879,7 +1882,7 @@ function putFacility2(opt) {
     console.log(opt);
     console.log(ward);
     layer = "geonode:osm_road_islandcity_14june"
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: 'geonode:osm_road_islandcity_14june',
         format: 'image/png',
 
@@ -1898,7 +1901,7 @@ function putFacility2(opt) {
     //console.log(wms_legend);
     // addWMSLegend(layer);
     addWMSLegend(layer);
-    TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     // // console.log(TRIBLAYER);
 
 }
@@ -1909,7 +1912,7 @@ function putCorpWards(opt) {
     // var district = document.getElementById("district").value;
     console.log(opt);
     console.log(ward);
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: 'geonode:corporatorwardboundary_mumbai_13may',
         format: 'image/png',
 
@@ -1928,7 +1931,7 @@ function putCorpWards(opt) {
     console.log(wms_layer);
     //console.log(wms_legend);
     // addWMSLegend(layer);
-    // TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    // TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     // // console.log(TRIBLAYER);
 
 }
@@ -1941,7 +1944,7 @@ function putAdminWards(opt) {
     // var district = document.getElementById("district").value;
     console.log(opt);
     console.log(ward);
-    var wms_layer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
         layers: 'geonode:mumbai_ward_boundary',
         format: 'image/png',
 
@@ -1960,7 +1963,7 @@ function putAdminWards(opt) {
     console.log(wms_layer);
     //console.log(wms_legend);
     // addWMSLegend(layer);
-    // TRIBLAYER = "https://geoserver2.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
+    // TRIBLAYER = "https://geonode.communitygis.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
     // // console.log(TRIBLAYER);
 
 }
@@ -1969,7 +1972,7 @@ function putAdminWards(opt) {
 
 
 function addWMSLegend(layer) {
-    lagendGraphic = "https://geoserver2.communitygis.net/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" + layer + "&LEGEND_OPTIONS=forceLabels:on";
+    lagendGraphic = "https://geonode.communitygis.in/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" + layer + "&LEGEND_OPTIONS=forceLabels:on";
     wms_legend = L.wmsLegend(lagendGraphic);
 }
 
