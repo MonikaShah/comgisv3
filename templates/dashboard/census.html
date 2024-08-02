@@ -279,9 +279,9 @@ var districtZoom = [7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
 
 var LayerList = [];
 
-const domain = ['https://geoserver2.communitygis.net/','http://localhost/','https://geonode.communitygis.in/'];
+const domain = ['https://geonode.communitygis.in/','http://localhost/'];
 
-var rootUrl = domain[0] + 'geoserver/geonode/ows';
+var rootUrl = domain[0] + 'geoserver/ows';
 
 var defaultParameters = {
 service: 'WFS',
@@ -314,7 +314,7 @@ if(amenity === 'Village Amenities'){
     if(villageLayerCode[index] == ''){
         alert('layer of '+ dis + ' not found');
     }else{
-        tempParameter.typeName = "geonode:villagecensus_maharashtra_1_0 ";
+        tempParameter.typeName = "geonode:villagecensus_maharashtra_1_000 ";
         tempParameter.cql_filter="district_n='"+villageLayerCode[index]+"'";
         tempParameter.propertyName="the_geom,census_201,village_na,taluka_nam,govt_pre_1,govt_pri_1,tot_popu";
 
@@ -366,7 +366,7 @@ else if(amenity === 'Household Amenities'){
         if(demoLayerCode[index] == ''){
             alert('layer of '+ dis + ' not found');
         }else{
-            tempParameter.typeName = "geonode:maha_demography_with_mumbai";
+            tempParameter.typeName = "geonode:maha_demography_with_mumbai0";
             tempParameter.cql_filter="district_n='"+demoLayerCode[index]+"'";
             tempParameter.propertyName="the_geom,district_n,area_name,tot_p,tot_f,tot_m,p_ill,p_lit";
             legend.addTo(mymap);
